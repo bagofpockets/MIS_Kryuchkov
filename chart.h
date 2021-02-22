@@ -1,23 +1,26 @@
-#pragma once
+#ifndef CHART_H
+#define CHART_H
 
-#include <QtWidgets/QMainWindow>
-#include <QtCharts/qchartview.h>
-#include "ui_chart.h"
+#include <QtCharts/QChart>
+
+QT_BEGIN_NAMESPACE
+class QGestureEvent;
+QT_END_NAMESPACE
 
 QT_CHARTS_USE_NAMESPACE
 
-class chartWidget : public QWidget
+class Chart : public QChart
 {
-    Q_OBJECT
-
-        
 public:
-    chartWidget(QWidget* parent = Q_NULLPTR);
-    ~chartWidget();
+    explicit Chart(QGraphicsItem* parent = nullptr, Qt::WindowFlags wFlags = {});
+    ~Chart();
 
-    QChart* chart;
+protected:
+    bool sceneEvent(QEvent* event);
 
 private:
-    Ui::chartWidget ui;
-    QChartView* chartView;
+    bool gestureEvent(QGestureEvent* event);
+
 };
+
+#endif // CHART_H

@@ -1,22 +1,41 @@
 #include "chart.h"
+#include <QtWidgets/QGesture>
+#include <QtWidgets/QGraphicsScene>
+#include <QtWidgets/QGraphicsView>
 
-chartWidget::chartWidget(QWidget* parent)
+Chart::Chart(QGraphicsItem* parent, Qt::WindowFlags wFlags)
+    : QChart(QChart::ChartTypeCartesian, parent, wFlags)
 {
-    ui.setupUi(this);
-    chart = new QChart();
-    chart->setObjectName(QString::fromUtf8("chart"));
-
-
-    chart->setTitle("Simple barchart example");
-
-    chartView = new QChartView(chart);
-    chartView->setRenderHint(QPainter::Antialiasing);
-
-    ui.gridLayout_2->addWidget(chartView, 0, 0, 1, 1);
+    grabGesture(Qt::PanGesture);
+    grabGesture(Qt::PinchGesture);
 }
 
-chartWidget::~chartWidget()
+Chart::~Chart()
 {
-    delete chart;
-    delete chartView;
+
+}
+
+bool Chart::sceneEvent(QEvent* event)
+{
+    if (event->type() == QEvent::Gesture)
+        return gestureEvent(static_cast<QGestureEvent*>(event));
+    return QChart::event(event);
+}
+
+bool Chart::gestureEvent(QGestureEvent* event)
+{
+    if (QGesture* gesture = event->gesture(Qt::PanGesture))
+    {
+        QPanGesture* pan = static_cast<QPanGesture*>(gesture);
+        QChart::scroll(-(pan->delta().x()), pan->delta().y());
+    }
+
+    if (QGesture* gesture = event->gesture(Qt::PinchGesture))
+    {
+        QPinchGesture* pinch = static_cast<QPinchGesture*>(gesture);
+        if (pinch->changeFlags() & QPinchGesture::ScaleFactorChanged)
+            QChart::zoom(pinch->scaleFactor());
+    }
+
+    return true;
 }

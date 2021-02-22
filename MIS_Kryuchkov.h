@@ -1,8 +1,11 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ui_MIS_Kryuchkov.h"
 #include "chart.h"
+#include "chartview.h"
+#include "ui_MIS_Kryuchkov.h"
+
+QT_CHARTS_USE_NAMESPACE
 
 class MIS_Kryuchkov : public QMainWindow
 {
@@ -14,8 +17,13 @@ public:
 
 private:
     Ui::MIS_KryuchkovClass ui;
-    chartWidget* chartWindow;
+    Chart* chart;
+    ChartView* chartView;
+    int i = 0;
+
+    //chartWidget* chartWindow;
 
 private slots:
-    void on_showChart_toggled(bool checked);
+    void on_showChart_clicked();
+    void on_tab_currentChanged(int);
 };
