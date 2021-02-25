@@ -10,8 +10,14 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>800</height>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>600</height>
+   </size>
   </property>
   <property name="maximumSize">
    <size>
@@ -71,14 +77,14 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>424</width>
-     <height>229</height>
+     <width>600</width>
+     <height>230</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>524287</width>
-     <height>229</height>
+     <height>230</height>
     </size>
    </property>
    <property name="floating">
@@ -130,14 +136,14 @@
         </attribute>
         <layout class="QGridLayout" name="gridLayout_4">
          <item row="3" column="0">
-          <widget class="QRadioButton" name="radioButton_2">
+          <widget class="QRadioButton" name="radioButton0_2">
            <property name="text">
             <string>Метод простых конгруэнций</string>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QSpinBox" name="spinBox">
+          <widget class="QSpinBox" name="spinBox0_1">
            <property name="minimum">
             <number>1</number>
            </property>
@@ -154,7 +160,7 @@
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QRadioButton" name="radioButton">
+          <widget class="QRadioButton" name="radioButton0_1">
            <property name="text">
             <string>Встроенная функция генерации случайных чисел C++</string>
            </property>
@@ -164,7 +170,7 @@
           </widget>
          </item>
          <item row="4" column="0">
-          <widget class="QRadioButton" name="radioButton_3">
+          <widget class="QRadioButton" name="radioButton0_3">
            <property name="text">
             <string>С использованием последовательности Лемера</string>
            </property>
@@ -178,7 +184,7 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QSpinBox" name="spinBox_2">
+          <widget class="QSpinBox" name="spinBox0_2">
            <property name="minimum">
             <number>1</number>
            </property>
@@ -258,6 +264,16 @@
        </property>
        <property name="default">
         <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="returnDock">
+       <property name="text">
+        <string>Вернуть в главное окно</string>
        </property>
        <property name="flat">
         <bool>false</bool>

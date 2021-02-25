@@ -1,4 +1,5 @@
 #include "chartview.h"
+#include "MIS_Kryuchkov.h"
 #include <QtCharts/QChart>
 
 ChartView::ChartView(QChart* chart, QWidget* parent) :
@@ -65,6 +66,9 @@ void ChartView::keyPressEvent(QKeyEvent* event)
         chart()->scroll(0, -10);
         break;
     case Qt::Key_Space:
+        chart()->zoomReset();
+        break;
+    case Qt::Key_0:
         chart()->zoomReset();
         break;
     default:

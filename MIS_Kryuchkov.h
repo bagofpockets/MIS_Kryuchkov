@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+#include <map>
 #include "chart.h"
 #include "chartview.h"
 #include "ui_MIS_Kryuchkov.h"
@@ -16,14 +17,16 @@ public:
     ~MIS_Kryuchkov();
 
 private:
+    std::map<int, QString> tab_names;
     Ui::MIS_KryuchkovClass ui;
     Chart* chart;
     ChartView* chartView;
-    int i = 0;
 
     //chartWidget* chartWindow;
 
 private slots:
+    void on_dockWidget_topLevelChanged();
+    void on_returnDock_clicked();
     void on_showChart_clicked();
-    void on_tab_currentChanged(int);
+    void on_tabs_currentChanged(int);
 };

@@ -20,7 +20,6 @@ protected:
 
 private:
     bool gestureEvent(QGestureEvent* event);
-
 };
 
 #endif // CHART_H

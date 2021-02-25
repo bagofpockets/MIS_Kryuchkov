@@ -12,7 +12,6 @@ Chart::Chart(QGraphicsItem* parent, Qt::WindowFlags wFlags)
 
 Chart::~Chart()
 {
-
 }
 
 bool Chart::sceneEvent(QEvent* event)
