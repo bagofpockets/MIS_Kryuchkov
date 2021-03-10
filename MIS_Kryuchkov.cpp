@@ -90,15 +90,16 @@ void MIS_Kryuchkov::on_showChart_clicked()
     //QBarSet* valuesSet = new QBarSet("x");
     QSplineSeries* series = new QSplineSeries();
 
+    std::srand(std::time(0));
+
     switch (ui.tabs->currentIndex())
     {
     case 0:
-        std::srand(std::time(0));
         if (ui.radioButton0_1->isChecked())
         {
             for (int i = 0; i < ui.spinBox0_1->value(); i++)
             {
-                qreal a = qreal((double)rand() / (double)RAND_MAX);
+                qreal a = (qreal)rand() / (qreal)RAND_MAX;
                 //chart->setTitle(QString::number(a));
                 series->append(i, a);
             }
@@ -125,8 +126,8 @@ void MIS_Kryuchkov::on_showChart_clicked()
         return;
     }
 
-    chart->axisY()->setRange(0, 1);
-    chart->axisX()->setRange(0, ui.spinBox0_1->value()-1);
+    chart->axisY()->setRange(-0.2, 1.2);
+    chart->axisX()->setRange(-1, ui.spinBox0_1->value());
 
     chart->addSeries(series);
     series->attachAxis(chart->axisX());
