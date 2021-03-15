@@ -5,3 +5,5 @@ x64
 *.sln
 *.user
 *.filters
+Release
+Debug

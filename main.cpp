@@ -1,5 +1,5 @@
 #include "MIS_Kryuchkov.h"
-#include <QtWidgets/QApplication>
+#include <QtWidgets/qapplication.h>
 
 int main(int argc, char *argv[])
 {
