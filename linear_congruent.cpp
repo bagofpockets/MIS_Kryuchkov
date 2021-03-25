@@ -1,6 +1,6 @@
 #include "linear_congruent.h"
 
-LinearCongruent::LinearCongruent(unsigned int seed = 1, const unsigned int samples, const unsigned int mult, const unsigned int increment) :
+LinearCongruent::LinearCongruent(unsigned int seed, const unsigned int samples, const unsigned int mult, const unsigned int increment) :
 	samples(samples),
 	mult(mult),
 	increment(increment),
@@ -14,9 +14,9 @@ LinearCongruent::~LinearCongruent()
 
 }
 
-void LinearCongruent::setSeed()
+void LinearCongruent::setSeed(unsigned int val)
 {
-	seed = std::time(0);
+	seed = val;
 }
 
 double LinearCongruent::next()

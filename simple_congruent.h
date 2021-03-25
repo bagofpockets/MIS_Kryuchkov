@@ -11,7 +11,7 @@ public:
 	SimpleCongruent(unsigned int seed = 1, const unsigned int samples = SAMPLES, const unsigned int mult = MULT);
 	~SimpleCongruent();
 
-	void setSeed();
+	void setSeed(unsigned int val = std::time(0));
 	double next();
 
 private:

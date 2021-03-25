@@ -1,8 +1,8 @@
 #pragma once
-
 #include <QtWidgets/QMainWindow>
 #include <map>
 #include "qwt_plot_histogram.h"
+#include "qwt_plot_grid.h"
 #include "ui_MIS_Kryuchkov.h"
 
 //QT_CHARTS_USE_NAMESPACE
@@ -18,6 +18,7 @@ public:
 private:
     std::map<int, QString> tab_names;
     Ui::MIS_KryuchkovClass ui;
+    QwtPlotGrid* grid;
     QwtPlotHistogram* histogram;
 
 private slots:
@@ -25,4 +26,10 @@ private slots:
     void on_returnDock_clicked();
     void on_showChart_clicked();
     void on_tabs_currentChanged(int);
+    void on_doubleSpinBox1_1_valueChanged(double);
+    void on_doubleSpinBox1_2_valueChanged(double);
+    void on_doubleSpinBox1_3_valueChanged(double);
+    void on_doubleSpinBox1_4_valueChanged(double);
+    void on_doubleSpinBox2_1_valueChanged(double);
+    void on_doubleSpinBox2_2_valueChanged(double);
 };

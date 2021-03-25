@@ -14,9 +14,9 @@ SimpleCongruent::~SimpleCongruent()
 
 }
 
-void SimpleCongruent::setSeed()
+void SimpleCongruent::setSeed(unsigned int val)
 {
-	seed = std::time(0);
+	seed = val;
 }
 
 double SimpleCongruent::next()

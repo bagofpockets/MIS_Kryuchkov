@@ -9,10 +9,10 @@
 class LinearCongruent
 {
 public:
-	LinearCongruent(unsigned int seed, const unsigned int samples = SAMPLES, const unsigned int mult = MULT, const unsigned int increment = INCREMENT);
+	LinearCongruent(unsigned int seed = 1, const unsigned int samples = SAMPLES, const unsigned int mult = MULT, const unsigned int increment = INCREMENT);
 	~LinearCongruent();
 
-	void setSeed();
+	void setSeed(unsigned int val = std::time(0));
 	double next();
 
 private:
