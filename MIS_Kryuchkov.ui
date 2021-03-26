@@ -448,7 +448,7 @@
          <item row="3" column="0">
           <widget class="QRadioButton" name="radioButton3_2">
            <property name="text">
-            <string>Метод простых конгруэнций</string>
+            <string>Метод Марсальи</string>
            </property>
           </widget>
          </item>
