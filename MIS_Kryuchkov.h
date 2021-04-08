@@ -21,6 +21,9 @@ private:
     QwtPlotGrid* grid;
     QwtPlotHistogram* histogram;
 
+    template <typename TOwner, double(TOwner::*nextFunc)()>
+    void generate_distribution(TOwner* val, const int numValues, const int intervalValues, const double lowerBound = 0.0, const double upperBound = 1.0);
+
 private slots:
     void on_dockWidget_topLevelChanged();
     void on_returnDock_clicked();
