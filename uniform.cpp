@@ -7,7 +7,7 @@ Uniform::Uniform(unsigned int seed, const unsigned int samples, const unsigned i
 	increment(increment),
 	seed(seed)
 {
-
+	std::srand(seed);
 }
 
 Uniform::~Uniform()

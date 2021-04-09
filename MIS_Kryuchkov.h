@@ -35,4 +35,5 @@ private slots:
     void on_doubleSpinBox1_4_valueChanged(double);
     void on_doubleSpinBox2_1_valueChanged(double);
     void on_doubleSpinBox2_2_valueChanged(double);
+    void on_checkBox4_1_toggled(bool);
 };

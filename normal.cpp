@@ -5,7 +5,7 @@
 #include <qdebug.h>
 #include "normal.h"
 
-Normal::Normal(unsigned int seed, int n) :
+Normal::Normal(unsigned int seed, const int n) :
 	n(n)
 {
 	std::srand(seed);
@@ -25,7 +25,7 @@ double Normal::standartNext()
 		uniDistModel += (double)rand() / (double)RAND_MAX;
 	}
 
-	return uniDistModel / 12;
+	return uniDistModel / n;
 }
 
 double Normal::marsagliaPolarNext()
