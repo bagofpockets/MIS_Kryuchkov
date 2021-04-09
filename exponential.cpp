@@ -1,9 +1,10 @@
 #include <cstdlib>
 #include "exponential.h"
 
-Exponential::Exponential(unsigned int seed, const int intervals, double lambda) :
+Exponential::Exponential(unsigned int seed, const int intervals, double lambda, const int k) :
 	lambda(lambda),
-	intervals(intervals)
+	intervals(intervals),
+	k(k)
 {
 	std::srand(seed);
 }
@@ -29,5 +30,16 @@ double Exponential::hyperNext()
 		S += q;
 	}
 
-	return -log((double)rand() / (double)RAND_MAX) / i;
+	return -log((double)rand() / (double)RAND_MAX) / (lambda * i);
+}
+
+double Exponential::erlangNext()
+{
+	double nextVal = 0.0;
+
+	for (int i = 0; i < k; i++)
+	{
+		nextVal += standardNext();
+	}
+	return nextVal;
 }
