@@ -25,10 +25,8 @@ private:
     void generate_distribution(TOwner* val, const int numValues, const int intervalValues, const double lowerBound = 0.0, const double upperBound = 1.0);
 
 private slots:
-    void on_dockWidget_topLevelChanged();
-    void on_returnDock_clicked();
-    void on_showChart_clicked();
-    void on_tabs_currentChanged(int);
+    void on_showPlot_clicked();
+    void on_gTabs_currentChanged(int);
     void on_doubleSpinBox1_1_valueChanged(double);
     void on_doubleSpinBox1_2_valueChanged(double);
     void on_doubleSpinBox1_3_valueChanged(double);
